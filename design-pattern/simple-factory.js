@@ -9,7 +9,7 @@ var Book = function(type) {
 
 // 第二种：传入不同参数，返回在基础上增强的对象
 var Book = function(name, author) {
-    let o = new Object;
+    let o = new Object();
     o.name = name;
     o.author = author;
     o.getName = () => {
