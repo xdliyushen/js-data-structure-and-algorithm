@@ -12,8 +12,15 @@ var Book = function(name, author) {
     let o = new Object();
     o.name = name;
     o.author = author;
-    o.getName = () => {
+
+    o.getName = function() {
+        // 若采用这种写法，则不能用箭头函数，否则其this会绑定在该函数中而不是创建的实例中，this.name为undefined。
         console.log(this.name);
+    }
+
+    o.getName2 = () => {
+        // 若采用这种写法，则可使用箭头函数。
+        console.log(name)
     }
     return o;
 }
